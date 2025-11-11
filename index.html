@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>溫馨蛋糕坊 - 線上蛋糕專賣店</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>🍰 溫馨蛋糕坊</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#products">產品</a></li>
+                <li><a href="#about">關於我們</a></li>
+                <li><a href="#contact">聯絡我們</a></li>
+            </ul>
+            <div class="cart-icon">
+                <span>🛒</span>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主橫幅 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>精緻手工蛋糕</h2>
+            <p>用愛心烘焙，為您帶來最溫暖的甜蜜時光</p>
+        </div>
+    </section>
+
+    <!-- 分類篩選 -->
+    <section class="filters">
+        <div class="filter-container">
+            <button class="filter-btn active" data-category="all">全部</button>
+            <button class="filter-btn" data-category="birthday">生日蛋糕</button>
+            <button class="filter-btn" data-category="wedding">婚禮蛋糕</button>
+            <button class="filter-btn" data-category="dessert">甜點</button>
+            <button class="filter-btn" data-category="seasonal">季節限定</button>
+        </div>
+    </section>
+
+    <!-- 產品展示區域 -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="products-grid" id="productsGrid">
+                <!-- 產品卡片將由JavaScript動態生成 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 購物車側邊欄 -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>購物車</h3>
+            <button class="close-cart" id="closeCart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">購物車是空的</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>總計：NT$ <span id="cartTotal">0</span></span>
+            </div>
+            <button class="checkout-btn">結帳</button>
+        </div>
+    </div>
+
+    <!-- 頁尾 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>關於我們</h4>
+                <p>用心製作每一款蛋糕，為您帶來最美好的味覺體驗</p>
+            </div>
+            <div class="footer-section">
+                <h4>聯絡資訊</h4>
+                <p>電話：02-1234-5678</p>
+                <p>Email：info@warmcake.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>營業時間</h4>
+                <p>週一至週日：09:00 - 21:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 溫馨蛋糕坊. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
