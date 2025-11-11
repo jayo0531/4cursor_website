@@ -14,14 +14,25 @@
                 <h1>🍰 溫馨蛋糕坊</h1>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">首頁</a></li>
                 <li><a href="#products">產品</a></li>
-                <li><a href="#about">關於我們</a></li>
-                <li><a href="#contact">聯絡我們</a></li>
             </ul>
-            <div class="cart-icon">
-                <span>🛒</span>
-                <span class="cart-count">0</span>
+            <div class="user-section">
+                <div class="login-section" id="loginSection">
+                    <button class="login-btn line-login" onclick="loginWithLine()">
+                        <span>📱</span> LINE 登入
+                    </button>
+                    <button class="login-btn google-login" onclick="loginWithGoogle()">
+                        <span>🔵</span> Google 登入
+                    </button>
+                </div>
+                <div class="user-info" id="userInfo" style="display: none;">
+                    <span class="user-name" id="userName"></span>
+                    <button class="logout-btn" onclick="logout()">登出</button>
+                </div>
+                <div class="cart-icon">
+                    <span>🛒</span>
+                    <span class="cart-count">0</span>
+                </div>
             </div>
         </div>
     </nav>
@@ -67,7 +78,58 @@
             <div class="cart-total">
                 <span>總計：NT$ <span id="cartTotal">0</span></span>
             </div>
-            <button class="checkout-btn">結帳</button>
+            <button class="checkout-btn" id="checkoutBtn">結帳</button>
+        </div>
+    </div>
+
+    <!-- 結帳模態框 -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>結帳資訊</h3>
+                <button class="close-modal" id="closeModal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="customer-info-section">
+                    <h4>客戶資料</h4>
+                    <div id="customerDisplayInfo"></div>
+                    <form id="customerForm">
+                        <div class="form-group">
+                            <label>姓名 *</label>
+                            <input type="text" id="customerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>電話 *</label>
+                            <input type="tel" id="customerPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label>電子郵件 *</label>
+                            <input type="email" id="customerEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label>地址 *</label>
+                            <textarea id="customerAddress" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>備註</label>
+                            <textarea id="customerNote" rows="2"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="order-summary">
+                    <h4>訂單摘要</h4>
+                    <div id="orderSummary"></div>
+                    <div class="order-total">
+                        <strong>總計：NT$ <span id="orderTotal">0</span></strong>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" onclick="closeCheckoutModal()">取消</button>
+                <button class="pay-btn" id="linePayBtn" onclick="proceedToLinePay()">
+                    <span>💳</span> LINE Pay 付款
+                </button>
+            </div>
         </div>
     </div>
 
